@@ -43,7 +43,8 @@
                 <select name="listeObjectifExercice" id="afficherListObjectifExercice">
                     <option>-----</option>
                 </select>
-                <input type="submit" value="Ajouter" name="btnAjouterObjectifExe" id="btnAjouterObjectifExe"/><br/>
+                <input type="submit" value="Ajouter" name="btnAjouterObjectifExe" id="btnAjouterObjectifExe"/>
+                <input type="submit" value="Afficher" name="btnAfficherObjectifExe" id="btnAfficherObjectifExe"/><br/>
                 <div id="afficherObjectifExerciceAjoute">
                     <%--objectifs et bouton supprimer--%>
                 </div><br/>
@@ -56,10 +57,15 @@
                     <%--nb repetition et bouton supprimer--%>
                 </div><br/>
             </div> 
-                <input type="submit" value="Enregistrer" name="btnEnregistrerExe"/>
+                <input type="submit" value="Enregistrer" name="btnEnregistrerExe" id="btnEnregistrerExe"/>
                 <%-- envoyer des infos et vider les champs --%>
                 <input type="submit" value="Annuler" name="btnAnnulerExe"/>
                 <%-- n'envoyer pas et rester les contenu des champs--%>
         </div>
+        <script type="text/JavaScript" src="js/fctxmlExercice.js"></script>
+        <%
+            String essai = (String)request.getAttribute("essai");
+            out.println("<p>pagejsp"+essai+"</p>");
+            %>
     </body>
 </html>

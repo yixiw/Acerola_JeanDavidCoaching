@@ -15,7 +15,7 @@
             <column name="NOMSP" length="50" />
         </property>
         <property name="avissp" type="string">
-            <column name="AVISSP" length="50" />
+            <column name="AVISSP" length="255" />
         </property>
         <property name="bilansp" type="java.lang.Boolean">
             <column name="BILANSP" />

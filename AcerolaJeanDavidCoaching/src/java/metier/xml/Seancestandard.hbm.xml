@@ -12,7 +12,7 @@
             <column name="NOMSS" length="50" />
         </property>
         <property name="avisss" type="string">
-            <column name="AVISSS" length="50" />
+            <column name="AVISSS" length="255" />
         </property>
         <property name="bilanss" type="java.lang.Boolean">
             <column name="BILANSS" />
