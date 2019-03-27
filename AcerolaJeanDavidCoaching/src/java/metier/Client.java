@@ -31,7 +31,7 @@ public class Client  implements java.io.Serializable {
     public Client() {
     }
 
-	
+	//yuwei
     public Client(Profil profil) {
         this.profil = profil;
     }
