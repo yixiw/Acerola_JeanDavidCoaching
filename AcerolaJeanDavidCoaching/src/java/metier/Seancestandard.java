@@ -1,5 +1,5 @@
 package metier;
-// Generated 27 mars 2019 10:56:33 by Hibernate Tools 4.3.1
+// Generated 27 mars 2019 12:04:47 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -76,10 +76,10 @@ public class Seancestandard  implements java.io.Serializable {
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 53 * hash + Objects.hashCode(this.codess);
-        hash = 53 * hash + Objects.hashCode(this.nomss);
-        hash = 53 * hash + Objects.hashCode(this.avisss);
-        hash = 53 * hash + Objects.hashCode(this.bilanss);
+        hash = 19 * hash + Objects.hashCode(this.codess);
+        hash = 19 * hash + Objects.hashCode(this.nomss);
+        hash = 19 * hash + Objects.hashCode(this.avisss);
+        hash = 19 * hash + Objects.hashCode(this.bilanss);
         return hash;
     }
 

@@ -1,5 +1,5 @@
 package metier;
-// Generated 27 mars 2019 10:56:33 by Hibernate Tools 4.3.1
+// Generated 27 mars 2019 12:04:47 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -103,13 +103,13 @@ public class Employe  implements java.io.Serializable {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 79 * hash + Objects.hashCode(this.codeem);
-        hash = 79 * hash + Objects.hashCode(this.nomem);
-        hash = 79 * hash + Objects.hashCode(this.prenomem);
-        hash = 79 * hash + Objects.hashCode(this.telem);
-        hash = 79 * hash + Objects.hashCode(this.adremailem);
-        hash = 79 * hash + Objects.hashCode(this.motdepasseem);
-        hash = 79 * hash + Objects.hashCode(this.typeem);
+        hash = 47 * hash + Objects.hashCode(this.codeem);
+        hash = 47 * hash + Objects.hashCode(this.nomem);
+        hash = 47 * hash + Objects.hashCode(this.prenomem);
+        hash = 47 * hash + Objects.hashCode(this.telem);
+        hash = 47 * hash + Objects.hashCode(this.adremailem);
+        hash = 47 * hash + Objects.hashCode(this.motdepasseem);
+        hash = 47 * hash + Objects.hashCode(this.typeem);
         return hash;
     }
 

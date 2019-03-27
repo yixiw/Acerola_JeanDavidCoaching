@@ -1,5 +1,5 @@
 package metier;
-// Generated 27 mars 2019 10:56:33 by Hibernate Tools 4.3.1
+// Generated 27 mars 2019 12:04:47 by Hibernate Tools 4.3.1
 
 
 import java.util.Arrays;
@@ -134,15 +134,15 @@ public class Exerciceperso  implements java.io.Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 37 * hash + Objects.hashCode(this.codeep);
-        hash = 37 * hash + Objects.hashCode(this.nomep);
-        hash = 37 * hash + Arrays.hashCode(this.descriptionmediaep);
-        hash = 37 * hash + Objects.hashCode(this.descriptiontxtep);
-        hash = 37 * hash + Objects.hashCode(this.tempsobjectifep);
-        hash = 37 * hash + Objects.hashCode(this.ordreep);
-        hash = 37 * hash + Objects.hashCode(this.nbseriep);
-        hash = 37 * hash + Objects.hashCode(this.tempsreposp);
+        int hash = 3;
+        hash = 23 * hash + Objects.hashCode(this.codeep);
+        hash = 23 * hash + Objects.hashCode(this.nomep);
+        hash = 23 * hash + Arrays.hashCode(this.descriptionmediaep);
+        hash = 23 * hash + Objects.hashCode(this.descriptiontxtep);
+        hash = 23 * hash + Objects.hashCode(this.tempsobjectifep);
+        hash = 23 * hash + Objects.hashCode(this.ordreep);
+        hash = 23 * hash + Objects.hashCode(this.nbseriep);
+        hash = 23 * hash + Objects.hashCode(this.tempsreposp);
         return hash;
     }
 

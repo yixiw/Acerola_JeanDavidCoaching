@@ -1,5 +1,5 @@
 package metier;
-// Generated 27 mars 2019 10:56:33 by Hibernate Tools 4.3.1
+// Generated 27 mars 2019 12:04:47 by Hibernate Tools 4.3.1
 
 
 import java.util.Arrays;
@@ -95,11 +95,11 @@ public class Exercicestandard  implements java.io.Serializable {
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 83 * hash + Objects.hashCode(this.codees);
-        hash = 83 * hash + Objects.hashCode(this.nomes);
-        hash = 83 * hash + Arrays.hashCode(this.descriptionmediaes);
-        hash = 83 * hash + Objects.hashCode(this.descriptiontxtes);
-        hash = 83 * hash + Objects.hashCode(this.tempsobjectifes);
+        hash = 79 * hash + Objects.hashCode(this.codees);
+        hash = 79 * hash + Objects.hashCode(this.nomes);
+        hash = 79 * hash + Arrays.hashCode(this.descriptionmediaes);
+        hash = 79 * hash + Objects.hashCode(this.descriptiontxtes);
+        hash = 79 * hash + Objects.hashCode(this.tempsobjectifes);
         return hash;
     }
 

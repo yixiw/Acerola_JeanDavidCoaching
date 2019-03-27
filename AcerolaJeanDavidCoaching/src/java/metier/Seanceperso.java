@@ -1,5 +1,5 @@
 package metier;
-// Generated 27 mars 2019 10:56:33 by Hibernate Tools 4.3.1
+// Generated 27 mars 2019 12:04:47 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -170,20 +170,20 @@ public class Seanceperso  implements java.io.Serializable {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 83 * hash + Objects.hashCode(this.codesp);
-        hash = 83 * hash + Objects.hashCode(this.nomsp);
-        hash = 83 * hash + Objects.hashCode(this.avissp);
-        hash = 83 * hash + Objects.hashCode(this.bilansp);
-        hash = 83 * hash + Objects.hashCode(this.semainesp);
-        hash = 83 * hash + Objects.hashCode(this.ordresp);
-        hash = 83 * hash + Objects.hashCode(this.fccalme);
-        hash = 83 * hash + Objects.hashCode(this.fcflexion);
-        hash = 83 * hash + Objects.hashCode(this.fcexe);
-        hash = 83 * hash + Objects.hashCode(this.mbras);
-        hash = 83 * hash + Objects.hashCode(this.mpoitrine);
-        hash = 83 * hash + Objects.hashCode(this.mtaille);
-        hash = 83 * hash + Objects.hashCode(this.mhanches);
-        hash = 83 * hash + Objects.hashCode(this.mcuisses);
+        hash = 97 * hash + Objects.hashCode(this.codesp);
+        hash = 97 * hash + Objects.hashCode(this.nomsp);
+        hash = 97 * hash + Objects.hashCode(this.avissp);
+        hash = 97 * hash + Objects.hashCode(this.bilansp);
+        hash = 97 * hash + Objects.hashCode(this.semainesp);
+        hash = 97 * hash + Objects.hashCode(this.ordresp);
+        hash = 97 * hash + Objects.hashCode(this.fccalme);
+        hash = 97 * hash + Objects.hashCode(this.fcflexion);
+        hash = 97 * hash + Objects.hashCode(this.fcexe);
+        hash = 97 * hash + Objects.hashCode(this.mbras);
+        hash = 97 * hash + Objects.hashCode(this.mpoitrine);
+        hash = 97 * hash + Objects.hashCode(this.mtaille);
+        hash = 97 * hash + Objects.hashCode(this.mhanches);
+        hash = 97 * hash + Objects.hashCode(this.mcuisses);
         return hash;
     }
 

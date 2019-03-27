@@ -1,5 +1,5 @@
 package metier;
-// Generated 27 mars 2019 10:56:33 by Hibernate Tools 4.3.1
+// Generated 27 mars 2019 12:04:47 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -53,7 +53,7 @@ public class Ordre  implements java.io.Serializable {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 89 * hash + this.numero;
+        hash = 59 * hash + this.numero;
         return hash;
     }
 

@@ -1,5 +1,5 @@
 package metier;
-// Generated 27 mars 2019 10:56:33 by Hibernate Tools 4.3.1
+// Generated 27 mars 2019 12:04:47 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -84,12 +84,12 @@ public class Profil  implements java.io.Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 37 * hash + Objects.hashCode(this.codepro);
-        hash = 37 * hash + Objects.hashCode(this.libellepro);
-        hash = 37 * hash + Objects.hashCode(this.agepro);
-        hash = 37 * hash + Objects.hashCode(this.poidspro);
-        hash = 37 * hash + Objects.hashCode(this.sexepro);
+        int hash = 3;
+        hash = 89 * hash + Objects.hashCode(this.codepro);
+        hash = 89 * hash + Objects.hashCode(this.libellepro);
+        hash = 89 * hash + Objects.hashCode(this.agepro);
+        hash = 89 * hash + Objects.hashCode(this.poidspro);
+        hash = 89 * hash + Objects.hashCode(this.sexepro);
         return hash;
     }
 

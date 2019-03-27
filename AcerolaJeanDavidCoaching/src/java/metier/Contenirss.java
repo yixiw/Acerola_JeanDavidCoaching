@@ -1,5 +1,5 @@
 package metier;
-// Generated 27 mars 2019 10:56:33 by Hibernate Tools 4.3.1
+// Generated 27 mars 2019 12:04:47 by Hibernate Tools 4.3.1
 
 import java.util.Objects;
 
@@ -68,8 +68,7 @@ public class Contenirss  implements java.io.Serializable {
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 79 * hash + Objects.hashCode(this.id);
-        hash = 79 * hash + Objects.hashCode(this.ordre);
+        hash = 37 * hash + Objects.hashCode(this.id);
         return hash;
     }
 
@@ -86,9 +85,6 @@ public class Contenirss  implements java.io.Serializable {
         }
         final Contenirss other = (Contenirss) obj;
         if (!Objects.equals(this.id, other.id)) {
-            return false;
-        }
-        if (!Objects.equals(this.ordre, other.ordre)) {
             return false;
         }
         return true;

@@ -1,5 +1,5 @@
 package metier;
-// Generated 27 mars 2019 10:56:33 by Hibernate Tools 4.3.1
+// Generated 27 mars 2019 12:04:47 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -152,16 +152,16 @@ public class Client  implements java.io.Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 89 * hash + Objects.hashCode(this.codec);
-        hash = 89 * hash + Objects.hashCode(this.nomc);
-        hash = 89 * hash + Objects.hashCode(this.prenomc);
-        hash = 89 * hash + Objects.hashCode(this.adremailc);
-        hash = 89 * hash + Objects.hashCode(this.datenaisc);
-        hash = 89 * hash + Objects.hashCode(this.telc);
-        hash = 89 * hash + Objects.hashCode(this.sexec);
-        hash = 89 * hash + Objects.hashCode(this.motdepassec);
-        hash = 89 * hash + Objects.hashCode(this.poidsc);
+        int hash = 5;
+        hash = 53 * hash + Objects.hashCode(this.codec);
+        hash = 53 * hash + Objects.hashCode(this.nomc);
+        hash = 53 * hash + Objects.hashCode(this.prenomc);
+        hash = 53 * hash + Objects.hashCode(this.adremailc);
+        hash = 53 * hash + Objects.hashCode(this.datenaisc);
+        hash = 53 * hash + Objects.hashCode(this.telc);
+        hash = 53 * hash + Objects.hashCode(this.sexec);
+        hash = 53 * hash + Objects.hashCode(this.motdepassec);
+        hash = 53 * hash + Objects.hashCode(this.poidsc);
         return hash;
     }
 

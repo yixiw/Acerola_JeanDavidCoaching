@@ -1,5 +1,5 @@
 package metier;
-// Generated 27 mars 2019 10:56:33 by Hibernate Tools 4.3.1
+// Generated 27 mars 2019 12:04:47 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -48,9 +48,9 @@ public class Objectifc  implements java.io.Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 97 * hash + Objects.hashCode(this.codeoc);
-        hash = 97 * hash + Objects.hashCode(this.libelleoc);
+        int hash = 5;
+        hash = 83 * hash + Objects.hashCode(this.codeoc);
+        hash = 83 * hash + Objects.hashCode(this.libelleoc);
         return hash;
     }
 

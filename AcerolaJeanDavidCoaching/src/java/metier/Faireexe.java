@@ -1,5 +1,5 @@
 package metier;
-// Generated 27 mars 2019 10:56:33 by Hibernate Tools 4.3.1
+// Generated 27 mars 2019 12:04:47 by Hibernate Tools 4.3.1
 
 import java.util.Objects;
 
@@ -82,12 +82,11 @@ public class Faireexe  implements java.io.Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 53 * hash + Objects.hashCode(this.id);
-        hash = 53 * hash + Objects.hashCode(this.client);
-        hash = 53 * hash + Objects.hashCode(this.tempsrealise);
-        hash = 53 * hash + Objects.hashCode(this.difficulte);
-        hash = 53 * hash + Objects.hashCode(this.commentaire);
+        int hash = 5;
+        hash = 23 * hash + Objects.hashCode(this.id);
+        hash = 23 * hash + Objects.hashCode(this.tempsrealise);
+        hash = 23 * hash + Objects.hashCode(this.difficulte);
+        hash = 23 * hash + Objects.hashCode(this.commentaire);
         return hash;
     }
 
@@ -110,9 +109,6 @@ public class Faireexe  implements java.io.Serializable {
             return false;
         }
         if (!Objects.equals(this.id, other.id)) {
-            return false;
-        }
-        if (!Objects.equals(this.client, other.client)) {
             return false;
         }
         if (!Objects.equals(this.tempsrealise, other.tempsrealise)) {

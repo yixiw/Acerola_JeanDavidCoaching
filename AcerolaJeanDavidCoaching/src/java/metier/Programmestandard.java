@@ -1,5 +1,5 @@
 package metier;
-// Generated 27 mars 2019 10:56:33 by Hibernate Tools 4.3.1
+// Generated 27 mars 2019 12:04:47 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -88,11 +88,11 @@ public class Programmestandard  implements java.io.Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 71 * hash + Objects.hashCode(this.codeps);
-        hash = 71 * hash + Objects.hashCode(this.nomps);
-        hash = 71 * hash + Objects.hashCode(this.descriptionps);
-        hash = 71 * hash + Objects.hashCode(this.nbsemaines);
+        int hash = 7;
+        hash = 59 * hash + Objects.hashCode(this.codeps);
+        hash = 59 * hash + Objects.hashCode(this.nomps);
+        hash = 59 * hash + Objects.hashCode(this.descriptionps);
+        hash = 59 * hash + Objects.hashCode(this.nbsemaines);
         return hash;
     }
 
