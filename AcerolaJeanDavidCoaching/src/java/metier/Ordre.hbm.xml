@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 27 mars 2019 10:56:33 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="metier.Ordre" table="ORDRE" catalog="db_21611960_2" optimistic-lock="version">
+        <id name="numero" type="int">
+            <column name="NUMERO" />
+            <generator class="assigned" />
+        </id>
+        <set name="contenireses" table="CONTENIRES" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="NUMERO" not-null="true" />
+            </key>
+            <one-to-many class="metier.Contenires" />
+        </set>
+        <set name="contenirsses" table="CONTENIRSS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="NUMERO" not-null="true" />
+            </key>
+            <one-to-many class="metier.Contenirss" />
+        </set>
+    </class>
+</hibernate-mapping>

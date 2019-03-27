@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 27 mars 2019 10:56:33 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="metier.Contenirss" table="CONTENIRSS" catalog="db_21611960_2" optimistic-lock="version">
+        <composite-id name="id" class="metier.ContenirssId">
+            <key-property name="codeps" type="int">
+                <column name="CODEPS" />
+            </key-property>
+            <key-property name="codess" type="int">
+                <column name="CODESS" />
+            </key-property>
+            <key-property name="numero" type="int">
+                <column name="NUMERO" />
+            </key-property>
+            <key-property name="semainess" type="int">
+                <column name="SEMAINESS" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="ordre" class="metier.Ordre" update="false" insert="false" fetch="select">
+            <column name="NUMERO" not-null="true" />
+        </many-to-one>
+        <many-to-one name="programmestandard" class="metier.Programmestandard" update="false" insert="false" fetch="select">
+            <column name="CODEPS" not-null="true" />
+        </many-to-one>
+        <many-to-one name="seancestandard" class="metier.Seancestandard" update="false" insert="false" fetch="select">
+            <column name="CODESS" not-null="true" />
+        </many-to-one>
+        <many-to-one name="semainess" class="metier.Semainess" update="false" insert="false" fetch="select">
+            <column name="SEMAINESS" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

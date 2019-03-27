@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 27 mars 2019 10:56:33 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="metier.Programmestandard" table="PROGRAMMESTANDARD" catalog="db_21611960_2" optimistic-lock="version">
+        <id name="codeps" type="java.lang.Integer">
+            <column name="CODEPS" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="employe" class="metier.Employe" fetch="select">
+            <column name="CODEEM" not-null="true" />
+        </many-to-one>
+        <property name="nomps" type="string">
+            <column name="NOMPS" length="50" />
+        </property>
+        <property name="descriptionps" type="string">
+            <column name="DESCRIPTIONPS" />
+        </property>
+        <property name="nbsemaines" type="java.lang.Integer">
+            <column name="NBSEMAINES" />
+        </property>
+        <set name="contenirsses" table="CONTENIRSS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CODEPS" not-null="true" />
+            </key>
+            <one-to-many class="metier.Contenirss" />
+        </set>
+        <set name="profils" table="POSSEDERPP" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CODEPS" not-null="true" />
+            </key>
+            <many-to-many entity-name="metier.Profil">
+                <column name="CODEPRO" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

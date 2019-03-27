@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 27 mars 2019 10:56:33 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="metier.Programmeperso" table="PROGRAMMEPERSO" catalog="db_21611960_2" optimistic-lock="version">
+        <id name="codepp" type="java.lang.Integer">
+            <column name="CODEPP" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="client" class="metier.Client" fetch="select">
+            <column name="CODEC" not-null="true" />
+        </many-to-one>
+        <many-to-one name="employe" class="metier.Employe" fetch="select">
+            <column name="CODEEM" not-null="true" />
+        </many-to-one>
+        <property name="nompp" type="string">
+            <column name="NOMPP" length="50" />
+        </property>
+        <property name="descriptionpp" type="string">
+            <column name="DESCRIPTIONPP" />
+        </property>
+        <property name="datedeb" type="date">
+            <column name="DATEDEB" length="10" />
+        </property>
+        <property name="nbsemainep" type="java.lang.Integer">
+            <column name="NBSEMAINEP" />
+        </property>
+        <property name="fcrepos" type="java.lang.Integer">
+            <column name="FCREPOS" />
+        </property>
+        <set name="seancepersos" table="SEANCEPERSO" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CODEPP" not-null="true" />
+            </key>
+            <one-to-many class="metier.Seanceperso" />
+        </set>
+    </class>
+</hibernate-mapping>
