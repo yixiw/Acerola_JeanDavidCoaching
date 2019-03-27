@@ -21,11 +21,11 @@ public class BD {
     public BD() {
     }
     /**
-        * Retour de la requête sous forme d'une liste de tableau d'objets SeanceStandard.
+        * cette fonction permet de chercher les séances par type de séance.
      * @param bilan
      * @return 
     */
-    public  static List<Seancestandard> consulterListeSeance (int bilan)  {
+    public  static List<Seancestandard> consulterTypeSeance (int bilan)  {
        
         List listeSeance;
         listeSeance = (List) session.createQuery("FROM Seancestandard s where bilanss ="+bilan).list();
@@ -33,4 +33,44 @@ public class BD {
         return listeSeance;
     
     }
+     /**
+        * cette fonction permet de chercher les séances par nom
+     * @param nom
+     * @return 
+    */
+    public  static List<Seancestandard> consulterNomSeance (String nom)  {
+       
+        List listeSeance;
+        listeSeance = (List) session.createQuery("FROM Seancestandard s where nomss ="+nom).list();
+        
+        return listeSeance;
+    
+    }
+//    public  static List afficherDetailSeance (String nomSeance)  {
+//       
+//        List listeExercice;
+//        listeExercice = (List) session.createQuery("Select e.nomes,c.nbseries,c.tempsreposs,SUM(e.tempsobjectifes) as 'Durée'"+
+//                                                   "FROM Exercicestandard e,Contenires c where c.exercicestandard.codees=e.codees,c.seancestandard.nomss ="+nomSeance).list();
+//        
+//        return listeExercice;
+//    
+//    }
+//     public static void main (String [] s)
+//    {
+//        try {
+//        
+//        Transaction t = session.beginTransaction();
+//        List  l = afficherDetailSeance(0);
+//        
+//          System.out.print(l);
+//            
+//        }
+//        
+//        catch(Exception ex)
+//        {
+//            System.out.println(ex.getMessage());
+//        
+//        }
+//    
+//    }
 }
