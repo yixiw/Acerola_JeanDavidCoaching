@@ -5,6 +5,7 @@
  */
 package bd;
 
+import java.util.Iterator;
 import java.util.List;
 import metier.Seancestandard;
 import org.hibernate.Session;
@@ -46,31 +47,37 @@ public class BD {
         return listeSeance;
     
     }
-//    public  static List afficherDetailSeance (String nomSeance)  {
-//       
-//        List listeExercice;
-//        listeExercice = (List) session.createQuery("Select e.nomes,c.nbseries,c.tempsreposs,SUM(e.tempsobjectifes) as 'Durée'"+
-//                                                   "FROM Exercicestandard e,Contenires c where c.exercicestandard.codees=e.codees,c.seancestandard.nomss ="+nomSeance).list();
-//        
-//        return listeExercice;
-//    
-//    }
-//     public static void main (String [] s)
-//    {
-//        try {
-//        
-//        Transaction t = session.beginTransaction();
-//        List  l = afficherDetailSeance(0);
-//        
-//          System.out.print(l);
-//            
-//        }
-//        
-//        catch(Exception ex)
-//        {
-//            System.out.println(ex.getMessage());
-//        
-//        }
-//    
-//    }
+    public  static List afficherDetailSeance (String nomSeance)  {
+       
+        List listeExercice;
+        listeExercice = (List) session.createQuery("Select e.nomes,c.nbseries,c.tempsreposs,SUM(e.tempsobjectifes) "+
+                                                   "FROM Exercicestandard e,Seancestandard s,Contenires c where c.exercicestandard.codees=e.codees,"+
+                                                    "s.codess= c.seancestandard.codess,s.nomss ="+nomSeance).list();
+        
+        return listeExercice;
+    
+    }
+     public static void main (String [] s)
+    {
+        
+        Transaction t = session.beginTransaction();
+        
+//        List<Seancestandard>  ll;
+//        ll = consulterTypeSeance(0);
+//      
+//        System.out.print(ll);
+        List  l = afficherDetailSeance("Échauffement");
+          Iterator e = l.iterator();
+		while (e.hasNext())
+			{
+			Object[] tab_obj = ((Object[]) e.next());
+
+			for (Object obj : tab_obj)
+				System.out.print(obj + " ");
+            
+        }
+        
+        
+    
+    }
 }
