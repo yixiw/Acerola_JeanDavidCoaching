@@ -22,9 +22,7 @@ import org.hibernate.Transaction;
  * @author 21611960
  */
 public class ServletAjouterObjectifExe extends HttpServlet {
-
-
-
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -41,42 +39,15 @@ public class ServletAjouterObjectifExe extends HttpServlet {
         response.setContentType("application/xml;charset=UTF-8");
         response.setCharacterEncoding("UTF-8");
         try (PrintWriter out = response.getWriter())
-                {    
+                {      
                     Session sessionH = HibernateUtil.getSessionFactory().getCurrentSession();
-                    Transaction t = sessionH.beginTransaction();
-//                    Exercicestandard eget = (Exercicestandard) sessionH.get(Exercicestandard.class, 1);
-//                    /*----- essayer -----*/
-//                    request.setAttribute("essai",eget.getNomes());
-//                    
-//                    System.out.println("<p>servlet.exercice.ServletCreerExercice.doGet()</p>");
-//                    System.out.println("exe get : "+eget.getNomes());
-//                    
-//                    /*----- Récupérer les éléments saisies -----*/
-                    String libelleOE = request.getParameter("libelleOE");
-                    Objectife oe = new Objectife();
-                    oe.setLibelleoe(libelleOE);
-                    
-//                    String descriptionExe = request.getParameter("descriptionExe");
-//                    
-//                    /*----- Ajouter l'exercice dans la BD -----*/
-//                    Exercicestandard e = new Exercicestandard();
-//                    e.setNomes(nomExe);
-//                    e.setDescriptiontxtes(descriptionExe);
-//                    System.out.println("new e "+e.getNomes());
-//                    sessionH.save(e);
-//                    
-                  
-//                    List<String> l = (List<String>)sessionH.createSQLQuery("Select LIBELLEOE From OBJECTIFE").list();
-//                    for(String oe : l){
-//                    out.println("<option>"+oe+"</option>");
-                    }
-
-
-
-//                    /*-----Commit -----*/
-                    t.commit();
+                    Transaction t = sessionH.beginTransaction();  
+                    /*----- Récupérer les éléments saisies -----*/
+                    int idOE = Integer.valueOf(request.getParameter("idOE"));
+                    Objectife  o = (Objectife) sessionH.get(Objectife.class, idOE);
+                    out.print("<li name=\"lstObjectifExeChoisi\"value=\""+idOE+"\">"+ o.getLibelleoe() + "</li>");
+                    }                  
     }
-        }
 
     /**
      * Handles the HTTP <code>POST</code> method.
@@ -101,5 +72,5 @@ public class ServletAjouterObjectifExe extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }
-
+}
 

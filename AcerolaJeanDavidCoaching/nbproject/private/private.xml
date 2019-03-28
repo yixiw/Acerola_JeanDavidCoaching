@@ -3,11 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file://ad.ut-capitole.fr/ETU/Personnel/L/21611960/Documents/NetBeansProjects/Acerola_JeanDavidCoaching/AcerolaJeanDavidCoaching/src/java/metier/Repetition.java</file>
+            <file>file://ad.ut-capitole.fr/ETU/Personnel/L/21611960/Documents/NetBeansProjects/Acerola_JeanDavidCoaching/AcerolaJeanDavidCoaching/src/java/servlet/exercice/ServletAfficherObjectifExe.java</file>
             <file>file://ad.ut-capitole.fr/ETU/Personnel/L/21611960/Documents/NetBeansProjects/Acerola_JeanDavidCoaching/AcerolaJeanDavidCoaching/src/java/servlet/exercice/ServletCreerExercice.java</file>
             <file>file://ad.ut-capitole.fr/ETU/Personnel/L/21611960/Documents/NetBeansProjects/Acerola_JeanDavidCoaching/AcerolaJeanDavidCoaching/src/java/bd/HibernateUtil.java</file>
             <file>file://ad.ut-capitole.fr/ETU/Personnel/L/21611960/Documents/NetBeansProjects/Acerola_JeanDavidCoaching/AcerolaJeanDavidCoaching/src/java/hibernate.cfg.xml</file>
             <file>file://ad.ut-capitole.fr/ETU/Personnel/L/21611960/Documents/NetBeansProjects/Acerola_JeanDavidCoaching/AcerolaJeanDavidCoaching/web/js/fctxmlExercice.js</file>
-            <file>file://ad.ut-capitole.fr/ETU/Personnel/L/21611960/Documents/NetBeansProjects/Acerola_JeanDavidCoaching/AcerolaJeanDavidCoaching/web/jsp/gestionExercice.jsp</file>
+            <file>file://ad.ut-capitole.fr/ETU/Personnel/L/21611960/Documents/NetBeansProjects/Acerola_JeanDavidCoaching/AcerolaJeanDavidCoaching/src/java/metier/Objectife.java</file>
         </group>
     </open-files>
 </project-private>

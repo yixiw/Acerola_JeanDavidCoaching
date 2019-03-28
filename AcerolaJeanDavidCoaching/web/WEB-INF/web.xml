@@ -20,6 +20,10 @@
         <servlet-name>ServletAjouterObjectifExe</servlet-name>
         <servlet-class>servlet.exercice.ServletAjouterObjectifExe</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletAjouterNbRepetition</servlet-name>
+        <servlet-class>servlet.exercice.ServletAjouterNbRepetition</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletCreerExercice</servlet-name>
         <url-pattern>/ServletCreerExercice</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>ServletAjouterObjectifExe</servlet-name>
         <url-pattern>/ServletAjouterObjectifExe</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletAjouterNbRepetition</servlet-name>
+        <url-pattern>/ServletAjouterNbRepetition</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

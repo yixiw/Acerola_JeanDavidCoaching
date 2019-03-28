@@ -83,8 +83,12 @@ public class Objectife  implements java.io.Serializable {
         }
         return true;
     }
-
-
+    public void addExerciceStandard(Exercicestandard es){
+        exercicestandards.add(es);
+    }
+    public void addExercicePerso(Exerciceperso e){
+        exercicepersos.add(e);
+    }
 
 
 }

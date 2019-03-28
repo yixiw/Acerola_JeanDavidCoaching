@@ -132,7 +132,12 @@ public class Exercicestandard  implements java.io.Serializable {
         }
         return true;
     }
-
+    public void addNbRepet(Repetition repet){
+        repetitions.add(repet);
+    }
+    public void addObjectife (Objectife oe){
+        objectifes.add(oe);
+    }
 
 
 

@@ -9,6 +9,7 @@ import bd.HibernateUtil;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -17,6 +18,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import metier.Exercicestandard;
+import metier.Repetition;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -48,25 +50,40 @@ public class ServletCreerExercice extends HttpServlet {
                 {    
                     Session sessionH = HibernateUtil.getSessionFactory().getCurrentSession();
                     Transaction t = sessionH.beginTransaction();
-                    Exercicestandard eget = (Exercicestandard) sessionH.get(Exercicestandard.class, 1);
-                    /*----- essayer -----*/
-                    request.setAttribute("essai",eget.getNomes());
-                    
-                    System.out.println("<p>servlet.exercice.ServletCreerExercice.doGet()</p>");
-                    System.out.println("exe get : "+eget.getNomes());
                     
                     /*----- Récupérer les éléments saisies -----*/
                     String nomExe = request.getParameter("nomExe");
                     String descriptionExe = request.getParameter("descriptionExe");
-                    
                     /*----- Ajouter l'exercice dans la BD -----*/
                     Exercicestandard e = new Exercicestandard();
                     e.setNomes(nomExe);
                     e.setDescriptiontxtes(descriptionExe);
-                    System.out.println("new e "+e.getNomes());
-                    sessionH.save(e);
                     
-                    /*-----Commit -----*/
+                    String objectifExeChoisi = request.getParameter("objectifExeChoisi");
+                    String nbRepetExeAjoute = request.getParameter("nbRepetExeAjoute");
+                    
+                    String[] lstNbRepetExeAjoute = nbRepetExeAjoute.split(",");
+                    out.println(objectifExeChoisi);
+                    for(int i=0; i<lstNbRepetExeAjoute.length; i++) {
+                        int nbFois = Integer.valueOf(lstNbRepetExeAjoute[i]);
+                        Repetition r = (Repetition) sessionH.get(Repetition.class, nbFois);
+                        if(r==null){
+                            Repetition rNouv = new Repetition(nbFois);
+                            e.addNbRepet(rNouv);
+                            rNouv.addExerciceStandard(e);
+                        }
+                        else{
+                            e.addNbRepet(r);
+                            r.addExerciceStandard(e);
+                        }
+                    }
+                    String[] lstObjectifExeChoisi = objectifExeChoisi.split(",");
+                    for(int i=0; i<lstObjectifExeChoisi.length; i++){
+                        
+                    }
+                    /*----- Enregistrer dans BD -----*/
+                    
+                    /*----- Commit -----*/
                     t.commit();
                 }
     }

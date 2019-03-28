@@ -74,8 +74,12 @@ public class Repetition  implements java.io.Serializable {
         }
         return true;
     }
-
-
+    public void addExerciceStandard(Exercicestandard e){
+        exercicestandards.add(e);
+    }
+    public void addExercicePerso(Exerciceperso e){
+        exercicepersos.add(e);
+    }
 
 
 }
