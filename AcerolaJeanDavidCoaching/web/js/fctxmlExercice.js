@@ -87,48 +87,109 @@ function ajouterNbRepetitionExe(){
     elt.insertAdjacentHTML ('afterbegin',txt);
 }
 
-function prevoireImage(){
-    var input = document.querySelector('input');
-    var preview = document.querySelector('.preview');
-    
-    input.style.opacity = 0;
-    
-    while(preview.firstChild){
-        preview.removeChild(preview.firstChild);
-    }
-    
-    var curFiles = input.files;
-    if(curFiles.length === 0){
-        var param = document.createElement('p');
-        param.textContent = 'No files currently selected for upload';
-        preview.appendChild(para);
-    }
-    else{
-        var list = document.createElement('ol');
-        preview.appendChild(list);
-        for (var i = 0; i<curFiles.length;i++){
-            var listItem = document.createElement('li');
-            var param = document.createElement('p');
-            param.textContent = 'File name ' + curFiles[i].name + ', file size' + returnFileSize(curFiles[i].size)+'.';
-            var image = document.createElement('img');
-            image.src = window.URL.createObjectURL(curFiles[i]);
+//function prevoireImage(){
+//    var input = document.querySelector('input');
+//    var preview = document.querySelector('.preview');
+//    
+//    input.style.opacity = 0;
+//    
+//    while(preview.firstChild){
+//        preview.removeChild(preview.firstChild);
+//    }
+//    
+//    var curFiles = input.files;
+//    if(curFiles.length === 0){
+//        var param = document.createElement('p');
+//        param.textContent = 'No files currently selected for upload';
+//        preview.appendChild(param);
+//    }
+//    else{
+//        var list = document.createElement('ol');
+//        preview.appendChild(list);
+//        for (var i = 0; i<curFiles.length;i++){
+//            var listItem = document.createElement('li');
+//            var param = document.createElement('p');
+//            param.textContent = 'File name ' + curFiles[i].name + ', file size' + returnFileSize(curFiles[i].size)+'.';
+//            var image = document.createElement('img');
+//            image.src = window.URL.createObjectURL(curFiles[i]);
+//
+//            listItem.appendChild(image);
+//            listItem.appendChild(param);
+//            
+//      list.appendChild(listItem);
+//        }
+//    }
+//}
+//function returnFileSize(number) {
+//  if(number < 1024) {
+//    return number + ' octets';
+//  } else if(number >= 1024 && number < 1048576) {
+//    return (number/1024).toFixed(1) + ' Ko';
+//  } else if(number >= 1048576) {
+//    return (number/1048576).toFixed(1) + ' Mo';
+//  }
+//}
 
-            listItem.appendChild(image);
-            listItem.appendChild(param);
-            
-      list.appendChild(listItem);
+$(document).on('click', '#close-preview', function(){ 
+    $('.image-preview').popover('hide');
+    // Hover befor close the preview
+    $('.image-preview').hover(
+        function () {
+           $('.image-preview').popover('show');
+        }, 
+         function () {
+           $('.image-preview').popover('hide');
         }
-    }
-}
-function returnFileSize(number) {
-  if(number < 1024) {
-    return number + ' octets';
-  } else if(number >= 1024 && number < 1048576) {
-    return (number/1024).toFixed(1) + ' Ko';
-  } else if(number >= 1048576) {
-    return (number/1048576).toFixed(1) + ' Mo';
-  }
-}
+    );    
+});
+
+$(function() {
+    // Create the close button
+    var closebtn = $('<button/>', {
+        type:"button",
+        text: 'x',
+        id: 'close-preview',
+        style: 'font-size: initial;',
+    });
+    closebtn.attr("class","close pull-right");
+    // Set the popover default content
+    $('.image-preview').popover({
+        trigger:'manual',
+        html:true,
+        title: "<strong>Preview</strong>"+$(closebtn)[0].outerHTML,
+        content: "There's no image",
+        placement:'bottom'
+    });
+    // Clear event
+    $('.image-preview-clear').click(function(){
+        $('.image-preview').attr("data-content","").popover('hide');
+        $('.image-preview-filename').val("");
+        $('.image-preview-clear').hide();
+        $('.image-preview-input input:file').val("");
+        $(".image-preview-input-title").text("Browse"); 
+    }); 
+    // Create the preview image
+    $(".image-preview-input input:file").change(function (){     
+        var img = $('<img/>', {
+            id: 'dynamic',
+            width:250,
+            height:200
+        });      
+        var file = this.files[0];
+        var reader = new FileReader();
+        // Set preview image into the popover data-content
+        reader.onload = function (e) {
+            $(".image-preview-input-title").text("Change");
+            $(".image-preview-clear").show();
+            $(".image-preview-filename").val(file.name);            
+            img.attr('src', e.target.result);
+            $(".image-preview").attr("data-content",$(img)[0].outerHTML).popover("show");
+        }        
+        reader.readAsDataURL(file);
+    });  
+});
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
 //s'exécute une fois quand la page HTML est chargé.

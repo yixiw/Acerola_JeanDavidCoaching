@@ -14,6 +14,13 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+  
+  
+  
 </head>
 <body>
 
@@ -54,10 +61,25 @@
                 <!-- colonne 1 -->
                 <div class="col-sm-4">
                     <h5>Choisir une image</h5>
-                    <input type="file" name="choisirMedia" id="choisirMedia" value="" accept="image/png, image/jpeg, image/jpg,.pdf"/>
+                    <!--<input type="file" name="choisirMedia" id="choisirMedia" value="" accept="image/png, image/jpeg, image/jpg, image/gif, .pdf"/>
                     <div class = "preview">
                         <p>Aucun fichier sélectionné pour le moment</p>
-                    </div>
+                    </div>-->
+                        <div class="input-group image-preview">
+                           <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+                           <span class="input-group-btn">
+                               <!-- image-preview-clear button -->
+                               <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                                   <span class="glyphicon glyphicon-remove"></span> Clear
+                               </button>
+                               <!-- image-preview-input -->
+                               <div class="btn btn-default image-preview-input">
+                                   <span class="glyphicon glyphicon-folder-open"></span>
+                                   <span class="image-preview-input-title">Browse</span>
+                                   <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
+                               </div>
+                           </span>
+                       </div>
                 
                 </div>
                 <!-- colonne 2 -->
