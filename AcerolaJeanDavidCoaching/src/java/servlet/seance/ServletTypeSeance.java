@@ -6,6 +6,7 @@
 package servlet.seance;
 
 import bd.BD;
+import bd.HibernateUtil;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -15,6 +16,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import metier.Seancestandard;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 /**
  *
@@ -39,14 +42,16 @@ public class ServletTypeSeance extends HttpServlet {
 
 			/*----- Récupération des paramètres -----*/
 			int bilan;
-                         bilan = Integer.valueOf(request.getParameter("bilan"));
+                        bilan = Integer.valueOf(request.getParameter("bilan"));
+                        
+                        /*----- Lecture de liste de séances dans la BD -----*/
+                        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+                        Transaction t = session.beginTransaction();
 
-                         /*----- Lecture de liste de séances dans la BD -----*/
-                         
-                         List <Seancestandard> lSeance = BD.consulterTypeSeance(bilan);
-                         lSeance.forEach((seance) -> {
-                             out.println("<seance>" + seance + "</seance>");
-                         });
+                        List <Seancestandard> lSeance = BD.consulterTypeSeance(bilan);
+                        lSeance.forEach((seance) -> {
+                            out.println("<seance>" + seance.getNomss() + "</seance>");
+                        });
 
 			out.println("</liste_seance>");
 			}

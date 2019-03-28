@@ -18,7 +18,6 @@ import org.hibernate.Transaction;
 public class BD {
      /*----- Ouverture de la session et de la transaction -----*/
     static Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-    Transaction t = session.beginTransaction();
     public BD() {
     }
     /**
@@ -28,8 +27,8 @@ public class BD {
     */
     public  static List<Seancestandard> consulterTypeSeance (int bilan)  {
        
-        List listeSeance;
-        listeSeance = (List) session.createQuery("FROM Seancestandard s where bilanss ="+bilan).list();
+        List<Seancestandard> listeSeance;
+        listeSeance = (List<Seancestandard>) session.createQuery("FROM Seancestandard s where bilanss ="+bilan).list();
         
         return listeSeance;
     
@@ -62,20 +61,22 @@ public class BD {
         
         Transaction t = session.beginTransaction();
         
-//        List<Seancestandard>  ll;
-//        ll = consulterTypeSeance(0);
-//      
-//        System.out.print(ll);
-        List  l = afficherDetailSeance("Échauffement");
-          Iterator e = l.iterator();
-		while (e.hasNext())
-			{
-			Object[] tab_obj = ((Object[]) e.next());
+        List<Seancestandard>  ll = consulterTypeSeance(0);
+        ll.forEach((seance) -> {
+            System.out.print(seance.getNomss());
+        });
 
-			for (Object obj : tab_obj)
-				System.out.print(obj + " ");
-            
-        }
+        
+//        List  l = consulterTypeSeance(0);
+//          Iterator e = l.iterator();
+//		while (e.hasNext())
+//			{
+//			Object[] tab_obj = ((Object[]) e.next());
+//
+//			for (Object obj : tab_obj)
+//				System.out.print(obj + " ");
+//            
+//        }
         
         
     
